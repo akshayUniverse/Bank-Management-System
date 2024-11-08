@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Transactions</h1>
+        <form action="" id="transaction-form">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            <label for="account-number">Account Number:</label>
+            <input type="text" id="account-number" name="account-number" required>
+            <label for="transaction-type">Transaction Type:</label>
+            <select id="transaction-type" name="transaction-type" required>
+                <option value="deposit">Deposit</option>
+                <option value="withdraw">Withdraw</option>
+            </select>
+            <button type="submit">Submit</button>   
+        </form>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

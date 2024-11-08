@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Dashboard</h1>
+        <section class="account-overview">
+        <h2>Account Overview</h2>
+        <p>Balannce : $1000</p>
+        <p>Account Number : 1234567890</p>
+        </section>
+
+        <section class="recent-transactions">
+            <h2>Recent Transactions</h2>
+            <ul>
+                <li>Deposit : $500</li>
+                <li>Withdraw : $200</li>
+            </ul>
+        </section>
+
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <button onclick="toggleSection('account-overview')">Toggle Account Overview</button>
+            <button onclick="toggleSection('recent-transactions')">Toggle Recent Transactions</button>
+        </section>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

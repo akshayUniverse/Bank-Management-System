@@ -1,0 +1,228 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Body */
+  body {
+    background-color: #f3f3f3;
+    color: #333;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    color: black;
+  }
+  
+  /* Utility Navigation */
+  .utility-nav {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+  }
+  .utility-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+  }
+  .utility-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Main Navigation */
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #003366;
+    color: #fff;
+  }
+  .main-nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+  }
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+  }
+  .main-nav div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  /* Header */
+  header {
+    background-color: #0074d9;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: url('bank-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  .hero .btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 4px;
+  }
+  
+  /* CTA Buttons */
+  .cta-buttons .btn {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-left: 10px;
+  }
+  .primary {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+  }
+  .secondary {
+    background-color: #007bff;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Features Section */
+  .features {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .features h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  .feature-box {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Main Content */
+  main {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  main h1, h2 {
+    color: #007bff;
+    margin: 1px 0px;
+  }
+  
+  /* Forms */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  form label {
+    margin-bottom: 0.5em;
+  }
+  form input, select, button {
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  form button {
+    background-color: #0074d9;
+    color: #fff;
+    cursor: pointer;
+  }
+  form button:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Quick Actions */
+  .quick-actions button {
+    margin-right: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #003366;
+    color: #fff;
+    padding: 20px 0;
+  }
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .social-media img {
+    width: 24px;
+    margin: 0 5px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .main-nav ul, .utility-nav ul, .cta-buttons {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    .footer-container {
+        flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    main {
+        padding: 15px;
+    }
+    header nav {
+        text-align: center;
+    }
+  }
+  
