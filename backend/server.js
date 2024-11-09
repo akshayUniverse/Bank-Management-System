@@ -2,7 +2,10 @@
 require('dotenv').config({ path: './backend/.env' });
 const mongoose = require('mongoose');
 
+const connectDB = require('./config/db');
+connectDB();
 
+const testModule = require('./testModule');
 const express = require('express');  // Import express
 
 const app = express(); // initialize express app
@@ -27,6 +30,4 @@ mongoose.connect(process.env.DB_CONNECTION)
 .then(()=>console.log("Database connected successfully"))
 .catch((error)=> console.error("Database connection error:",error));
 
-
-
-
+testModule();
