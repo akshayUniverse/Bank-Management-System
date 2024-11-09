@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 connectDB();
 
+const userRoutes = require('./routes/userRoutes');
+app.use('/api/users',userRoutes);
 const testModule = require('./testModule');
 const express = require('express');  // Import express
 
