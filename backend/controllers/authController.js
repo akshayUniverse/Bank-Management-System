@@ -3,14 +3,29 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 const registerUser = async(req,res) => {
+     console.log("Request body:" , req.body);
     try{
-        const{ username,email,password } = req.body;
-
+        const{ name,username,email,password ,dob, contactNumber, accountNumber, bankName, bankBalance} = req.body;
+            
+            const userExists = await User.findOne({ email });
+            if (userExists) {
+                return res.status(400).json({ message: 'User already exists' });
+            }
+    
         if(!username || !email || !password){
             return res.status(400).json({error:"Please provide all required fields "});
         }
         const hashedPassword = await bcrypt.hash(password,10);
-        const newUser = new User({username,email,password: hashedPassword});
+        const newUser = new User({
+            name,
+            username,
+            email,
+            password: hashedPassword,
+            dob,
+            contactNumber,
+            accountNumber,
+            bankName,
+            bankBalance,});
         await newUser.save();
 
         const token = jwt.sign({ userId:newUser._id },process.env.JWT_SECRET,{ expiresIn: '1h' });
@@ -42,4 +57,17 @@ const loginUser = async (req,res) =>{
 };
 
 
-module.exports = {registerUser , loginUser };
+const getUserInfo = async (req, res) =>{
+    try{
+        const user = await User.findById(req.user.id).select('-password');
+        if(!user){
+            return res.status(404).json({ message: 'User not found'});
+        }
+        res.json(user);
+    }   catch(error){
+        console.error(error);
+        res.status(500).json({ message: 'Server error '});
+    }
+};
+
+module.exports = {registerUser , loginUser , getUserInfo };

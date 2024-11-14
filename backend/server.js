@@ -1,6 +1,7 @@
 
 require('dotenv').config({ path: './backend/.env' });
 const mongoose = require('mongoose');
+const userRoutes = require('./routes/userRoutes');
 
 
 const connectDB = require('./config/db');
@@ -15,14 +16,14 @@ app.use(cors({
     origin: 'http://127.0.0.1:3000', // Replace with the frontend URL
     credentials: true // Allow cookies to be sent with requests
   }));
-
+  
+  app.use(express.json());
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-app.use(express.json());
 
-const userRoutes = require('./routes/userRoutes');
 app.use('/api/users',userRoutes);
+app.use('/api',userRoutes);
 
 const PORT = process.env.PORT || 5000; // define the port
 

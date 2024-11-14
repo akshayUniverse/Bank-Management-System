@@ -13,9 +13,18 @@ const User = require('./models/User');
 const testUser = async () => {
   try {
     const newUser = new User({
-      username: 'Akshay karada',
-      email: 'rajkumar@example.com',
-      password: 'superbmerijaan@1'
+      
+        "name": "akshay",
+        "username": "askeyraj",
+        "email": "akshay@example.com",
+        "password": "akshay123",
+        "dob": "08-12-2000",
+        "contactNumber": "1234567890",
+        "accountNumber": "9876543210",
+        "bankName": "XYZ Bank",
+        "bankBalance": 1000
+    
+    
     });
 
     await newUser.save();  // Save the new user to the database
@@ -31,6 +40,6 @@ const testUser = async () => {
 };
 
 // Call the test function
-testUser();
+//testUser();
 
 module.exports = testUser;

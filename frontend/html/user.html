@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+    <!-- Header with Username and Logout -->
+    <header class="header">
+        <div class="logo">MyBank</div>
+        <div class="user-info">
+            <span id="username">User Name</span>
+            <button id="logoutButton" class="logout">Logout</button>
+        </div>
+    </header>
+
+    <!-- User Information Section -->
+    <section class="user-details-box">
+        <h2>User Information</h2>
+        <p><strong>Name:</strong> <span id="name"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Date of Birth:</strong> <span id="dob"></span></p>
+        <p><strong>Contact Number:</strong> <span id="contact"></span></p>
+        <p><strong>Account Number:</strong> <span id="accountNumber"></span></p>
+        <p><strong>Bank Name:</strong> <span id="bankName"></span></p>
+        <p><strong>Bank Balance:</strong> $<span id="balance"></span></p>
+        <button id="transferMoneyButton" class="transfer-button">Transfer Money</button>
+    </section>
+
+    <!-- Scrollable Details Section -->
+    <section class="scrollable-info">
+        <div class="info-box">Credit Card Details</div>
+        <div class="info-box">Loan Information</div>
+        <div class="info-box">Transaction History</div>
+        <div class="info-box">Investment Portfolio</div>
+        <div class="info-box">Insurance Information</div>
+        <!-- Add more info boxes as needed -->
+    </section>
+
+    <script src="../js/user.js"></script>
+</body>
+</html>

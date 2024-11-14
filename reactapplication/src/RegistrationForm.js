@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import axiosInstance from './axiosConfig';
 
-const Register = () => {
+const RegisterForm = () => {
     const [username , setUsername] = useState('');
     const [email , setEmail] = useState('');
     const [password, setPassword] = useState('');
