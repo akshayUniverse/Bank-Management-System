@@ -23,8 +23,9 @@ document.getElementById("login-form")?.addEventListener("submit", async function
             }
 
             const data = await response.json();
-            if (data.message === 'Login successful') {
-                // Redirect on successful login
+            if (response.ok && data.token) {
+                
+                document.cookie = `token=${data.token}; path=/;`;
                 alert('Login successful');
                 window.location.href = 'user.html';
             } else {
@@ -79,12 +80,13 @@ document.getElementById("register-form")?.addEventListener("submit", async funct
             });
 
             const data = await response.json();
-            if (data.message === 'User registered successfully') {
-                // Redirect on successful registration
+            if (response.ok && data.token) {
+
+                document.cookie = `token=${data.token}; path=/;`;
                 alert('Registration successful!');
                 window.location.href = 'user.html';
             } else {
-                // Alert specific error message from the response
+                
                 alert(data.error || 'Registration failed');
             }
         } catch (error) {

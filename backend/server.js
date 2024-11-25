@@ -3,7 +3,6 @@ require('dotenv').config({ path: './backend/.env' });
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
 
-
 const connectDB = require('./config/db');
 connectDB();
 
@@ -14,6 +13,7 @@ const cors = require('cors');
 const app = express(); // initialize express app
 app.use(cors({
     origin: 'http://127.0.0.1:3000', // Replace with the frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true // Allow cookies to be sent with requests
   }));
   

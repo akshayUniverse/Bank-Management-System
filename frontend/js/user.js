@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const response = await fetch('http://localhost:5000/api/users/me', {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${getCookie('token')}`,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${getCookie('token')}`
             },
             credentials: 'include'
         });

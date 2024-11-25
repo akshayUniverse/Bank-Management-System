@@ -37,7 +37,8 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
             alert('Registration successful');
             // Optionally, reset form fields
             document.getElementById('registerForm').reset();
-            // Redirect or perform other post-registration actions here
+            
+            window.location.href = 'user.html';
         } else {
             // If there's an error, display the error message
             alert('Error: ' + (data.message || 'Registration failed'));

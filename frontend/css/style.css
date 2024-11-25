@@ -22,7 +22,7 @@
   
   /* Utility Navigation */
   .utility-nav {
-    background-color: #f8f8f8;
+    background-color: #fd6c35;
     padding: 10px 0;
   }
   .utility-nav ul {
@@ -82,20 +82,26 @@
   
   /* Hero Section */
   .hero {
-    height: 80vh;
-    background: url('../images/mainfront.jpg') no-repeat center center/cover;
-    color: #fff;
+    height: 90vh;
+    color:white;
     padding: 100px 0;
     text-align: center;
   }
+  .hero {
+    border-color: black;
+    background: url(../images/mainfront.jpg) no-repeat center center / cover;
+}
+
   .hero h1 {
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin-bottom: 10px;
+    color: #ff2600;
   }
   .hero p {
-    font-size: 1.2em;
+    font-size: 1.7em;
     margin-bottom: 20px;
     padding: 20px;
+    color: #ff2600;
   }
   .hero .btn {
     padding: 10px 20px;
@@ -131,8 +137,12 @@
     font-size: 2em;
     margin-bottom: 30px;
   }
+  .feature-box h3 {
+    color: #fd6c35;
+  }
   .feature-box p {
       margin: 70px 200px;
+      font-size: 1.3em;
   }
   .feature-box {
     display: flex;
