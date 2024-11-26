@@ -9,7 +9,13 @@ const userSchema = new mongoose.Schema({
     contactNumber: { type: String,required: true, },
     accountNumber: { type: String,required: true, },
     bankName: { type: String,required: true, },
-    bankBalance: { type: Number,required: true,default: 0, },
+    
+    role: {
+        type:String,
+        enum: ["Admin","User","Moderator"],
+        default: "User",
+    },
+
     createdAT: { type: Date, default:Date.now}
 });
 

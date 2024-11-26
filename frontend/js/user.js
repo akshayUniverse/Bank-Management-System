@@ -19,19 +19,19 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById('contact').innerText = userData.contact || "Not Available";
         document.getElementById('accountNumber').innerText = userData.accountNumber || "Not Available";
         document.getElementById('bankName').innerText = userData.bankName || "Not Available";
-        document.getElementById('balance').innerText = userData.balance || "0.00";
+        
     } catch (error) {
         console.error(error);
         alert('Error loading user information');
     }
 
-    // Logout Button
+    
     document.getElementById('logoutButton').addEventListener('click', () => {
         document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         window.location.href = 'login.html';
     });
     
-    // Animate info boxes on scroll
+    
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 });
 
-// Helper function to retrieve JWT token from cookies
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);

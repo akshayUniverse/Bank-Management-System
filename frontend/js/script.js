@@ -1,4 +1,4 @@
-// Login form submission handler
+
 document.getElementById("login-form")?.addEventListener("submit", async function(event){
     event.preventDefault();
 
@@ -6,7 +6,7 @@ document.getElementById("login-form")?.addEventListener("submit", async function
     const password = document.getElementById("password").value;
 
     if (!email || !password) {
-        // Alert user if email or password is missing
+       
         alert("Please enter both Email and Password");
     } else {
         try {
@@ -18,7 +18,7 @@ document.getElementById("login-form")?.addEventListener("submit", async function
             });
 
             if (!response.ok) {
-                // Check if response is not OK to display appropriate error
+              
                 throw new Error('Login failed');
             }
 
@@ -26,10 +26,10 @@ document.getElementById("login-form")?.addEventListener("submit", async function
             if (response.ok && data.token) {
                 
                 document.cookie = `token=${data.token}; path=/;`;
-                alert('Login successful');
                 window.location.href = 'user.html';
+                alert('Login successful');
             } else {
-                // Alert the specific error message from the response
+             
                 alert(data.message || 'Login failed');
             }
         } catch (error) {
@@ -39,7 +39,7 @@ document.getElementById("login-form")?.addEventListener("submit", async function
     }
 });
 
-// Register form submission handler
+
 document.getElementById("register-form")?.addEventListener("submit", async function(event){
     event.preventDefault();
 
@@ -52,13 +52,13 @@ document.getElementById("register-form")?.addEventListener("submit", async funct
     const contactNumber = document.getElementById("contactNumber").value;
     const accountNumber = document.getElementById("accountNumber").value;
     const bankName = document.getElementById("bankName").value;
-    const bankBalance = parseFloat(document.getElementById("bankBalance").value) || 0;
+    
 
     if (!name || !username || !email || !password || !confirmPassword || !dob || !contactNumber || !accountNumber || !bankName) {
-        // Alert user if any required field is missing
+       
         alert("Please fill in all fields");
     } else if (password !== confirmPassword) {
-        // Alert if passwords do not match
+       
         alert("Passwords do not match.");
     } else {
         try {
@@ -73,8 +73,8 @@ document.getElementById("register-form")?.addEventListener("submit", async funct
                     dob,
                     contactNumber,
                     accountNumber,
-                    bankName,
-                    bankBalance 
+                    bankName
+                    
                 }),
                 credentials: 'include'
             });
@@ -83,8 +83,8 @@ document.getElementById("register-form")?.addEventListener("submit", async funct
             if (response.ok && data.token) {
 
                 document.cookie = `token=${data.token}; path=/;`;
-                alert('Registration successful!');
                 window.location.href = 'user.html';
+                alert('Registration successful!');
             } else {
                 
                 alert(data.error || 'Registration failed');

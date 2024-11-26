@@ -8,13 +8,13 @@ connectDB();
 
 
 const testModule = require('./testModule');
-const express = require('express');  // Import express
+const express = require('express');  
 const cors = require('cors');
-const app = express(); // initialize express app
+const app = express(); 
 app.use(cors({
-    origin: 'http://127.0.0.1:3000', // Replace with the frontend URL
+    origin: 'http://127.0.0.1:3000', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true // Allow cookies to be sent with requests
+    credentials: true 
   }));
   
   app.use(express.json());
@@ -25,17 +25,17 @@ app.use(cookieParser());
 app.use('/api/users',userRoutes);
 app.use('/api',userRoutes);
 
-const PORT = process.env.PORT || 5000; // define the port
+const PORT = process.env.PORT || 5000; 
 
 const DB_CONNECTION = process.env.DB_CONNECTION;
 const JWT_SECRET = process.env.JWT_SECRET;
 
-app.get('/',(req,res)=>{               // basic route for testing
+app.get('/',(req,res)=>{               
 
     res.send('Server is running successfully!');
 });
 
-app.listen(PORT,()=>{                  //start the server
+app.listen(PORT,()=>{                  
 
     console.log(`Server is running on port ${PORT}`);
 });
